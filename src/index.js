@@ -3,10 +3,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //importing test component
-import Test from './components/Test';
+import AppRouter from '../src/routers/AppRouter';
 
 //importing style sheet
 import './styles/main.scss';
 
+//jsx
+const jsx = (
+      <AppRouter />
+);
 
-ReactDOM.render(<Test />, document.getElementById('app'));
+//rendering app
+ReactDOM.render(jsx, document.getElementById('app'));

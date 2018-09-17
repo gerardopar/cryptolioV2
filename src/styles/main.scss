@@ -2,5 +2,11 @@
 @import './base/setting';
 @import './base/base';
 
-//importing components
-@import './components/test';
+// importing components
+@import './components/searchbar';
+@import './components/market';
+@import './components/user';
+@import './components/coinSearched';
+@import './components/coinItem';
+@import './components/message';
+@import './components/Footer';

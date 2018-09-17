@@ -1,0 +1,83 @@
+//* main div
+.coinSearched{
+    align-items: center;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: whitesmoke;
+    display: flex;
+    height: 25vh;
+    flex-direction: column;
+    justify-content: center;
+}
+
+//* outer coin wrap
+.coinSearched__wrap{
+    background-color: rgba(85, 85, 85, 0.815);
+    height: 80%;
+    width: 90%;
+}
+
+//* inner coin rows
+.coinSearched__row--1{
+    align-items: center;
+    display: flex;
+    height: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 16px;
+}
+.coinSearched__row--2{
+    align-items: center;
+    background-color: rgba(68, 68, 68, 0.904);
+    display: flex;
+    height: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 16px;
+}
+
+//*img wrap
+.coinSearched__img--wrap{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+.coinSearched__img{
+    height: 30px;
+    width: 30px;
+}
+
+//*text wrap
+.coinSearched__text--wrap{
+    text-align: left;
+}
+
+.coinSearched__text{
+    font-size: 1rem;
+}
+
+//*coinsearched text
+.coinSearched__img--text{
+    margin-left: 10px;
+}
+
+//*buttons
+.coinSearched__btn--wrap{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.cointItem__btn--addSearch{
+    font-size: 1rem;
+    margin-right: 1%;
+}
+
+.cointItem__btn--clearSearch{
+    font-size: 1rem;
+    margin-right: 1%;
+}

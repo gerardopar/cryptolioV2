@@ -1,0 +1,131 @@
+
+.market{
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 10vh;
+}
+
+.market__list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    // padding: 12px 16px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.market__item{
+    background-color: rgba(85, 85, 85, 0.815);
+    border-radius: 2px;
+    color: whitesmoke;
+    font-size: $s-size;
+    letter-spacing: 1px;
+    padding: 12px 16px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+@media (max-width: 499.98px) and (orientation: portrait){
+    .market{
+        height: 25vh;
+    }
+
+    .market__list{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 2px 4px;
+        text-align: center;
+    }
+
+    .market__item{
+        font-size: $s-size;
+        margin-bottom: 10px;
+    }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 539.98px) and (min-width: 500px) and (orientation: portrait){
+    .market{
+        height: 25vh;
+    }
+
+    .market__list{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 2px 4px;
+        text-align: center;
+    }
+
+    .market__item{
+        font-size: $s-size;
+        margin-bottom: 10px;
+    }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) and (min-width: 540px) and (orientation: portrait){
+    .market{
+        height: 12vh;
+    }
+
+    .market__list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 2px 4px;
+        text-align: center;
+    }
+
+    .market__item{
+        font-size: $xs-size;
+    }
+}
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) and (orientation: landscape) {
+    .market{
+        height: 12vh;
+    }
+    
+    .market__item{
+        font-size: $xs-size;
+    }
+
+    .market__list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 2px 4px;
+        text-align: center;
+    }
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) and (orientation: portrait) {
+    .market__item{
+        font-size: $xs-size;
+    }
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) and (orientation: landscape) {
+    .market__item{
+        font-size: $xs-size;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) and (orientation: landscape) {
+    .market__item{
+        font-size: $xs-size;
+    }
+}

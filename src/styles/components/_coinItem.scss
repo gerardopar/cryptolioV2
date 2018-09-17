@@ -1,0 +1,122 @@
+//* main div
+.coinItem{
+    align-items: center;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: whitesmoke;
+    display: flex;
+    height: 30vh;
+    flex-direction: column;
+    justify-content: center;
+}
+
+//* outer coin wrap
+.coinItem__wrap{
+    background-color: rgba(85, 85, 85, 0.815);
+    height: 80%;
+    width: 90%;
+}
+
+//* inner coin rows
+.coinItem__row--1{
+    align-items: center;
+    display: flex;
+    height: 33.3%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 16px;
+}
+.coinItem__row--2{
+    align-items: center;
+    background-color: rgba(68, 68, 68, 0.90);
+    display: flex;
+    height: 33.33%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 16px;
+}
+.coinItem__row--3{
+    align-items: center;
+    background-color: rgba(68, 68, 68, 0.75);
+    display: flex;
+    height: 33.3%;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 12px 16px;
+}
+
+//*img wrap
+.coinItem__img--wrap{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+.coinItem__img{
+    height: 30px;
+    width: 30px;
+}
+
+//*text wrap
+.coinItem__text--wrap{
+    text-align: left;
+}
+
+.coinItem__text{
+    font-size: 1rem;
+}
+
+//*coinItem text
+.coinItem__img--text{
+    margin-left: 10px;
+}
+
+
+//*forms 
+//*search bar/form
+.coinItem__form{
+    width: 25%;
+    margin-right: 1%;
+}
+
+.coinItem__input--wrap{
+    align-items: center;
+    display: flex;
+    background-color: none;
+    // background-color: rgb(17, 17, 17);
+}
+
+.coinItem__input{
+    border-bottom: none !important;
+    color: whitesmoke;
+    display: inline-block;
+    font-family: $main-font;
+    font-size: 1rem !important;
+}
+
+//*input overwrites
+.coinItem__input::placeholder{
+    color: rgba(163, 163, 163, 0.24);
+}
+
+.coinItem__input--wrap input:focus + label {
+    color: rgb(29, 29, 29) !important;
+}
+/* label underline focus color */
+.coinItem__input--wrap input:focus {
+    border-bottom: 1px solid #5c6bc0 !important;
+    // box-shadow: 0 1px 0 0 rgb(29, 29, 29) !important
+}
+
+
+//*buttons
+.cointItem__btn--clear{
+    font-size: 1rem;
+    margin-right: 1%;
+}
+
+.cointItem__btn--remove{
+    font-size: 1rem;
+    margin-right: 1%;
+}
