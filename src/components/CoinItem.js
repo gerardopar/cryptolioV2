@@ -38,8 +38,8 @@ const CoinItem = (props) => {
                     <div className="coinItem__row--3">
                         <form onSubmit={(e) => props.handleCoinsToAdd(props.id, e)} className="coinItem__form">
                             <div className="coinItem__input--wrap">
-                                <input className="coinItem__input" type="number" name="coinToAdd" placeholder={`add ${props.symbol}`} autoComplete='off'/>
-                                <button className="btn-small waves-effect waves-light indigo lighten-1 z-depth-5">
+                                <input className="coinItem__input" type="number" name="coinToAdd" placeholder={props.symbol} autoComplete='off'/>
+                                <button className="btn-small coinItem__add waves-effect waves-light indigo lighten-1 z-depth-5">
                                 +
                                 </button>
                             </div>
@@ -47,8 +47,8 @@ const CoinItem = (props) => {
 
                         <form onSubmit={(e) => props.handleCoinsToRemove(props.id, e)} className="coinItem__form">
                             <div className="coinItem__input--wrap">
-                                <input className="coinItem__input" type="number" name="coinToRemove" placeholder={`remove ${props.symbol}`} autoComplete='off'/>
-                                <button className="btn-small waves-effect waves-light indigo lighten-1 z-depth-5">
+                                <input className="coinItem__input" type="number" name="coinToRemove" placeholder={props.symbol} autoComplete='off'/>
+                                <button className="btn-small coinItem__delete waves-effect waves-light indigo lighten-1 z-depth-5">
                                 -
                                 </button>
                             </div>

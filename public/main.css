@@ -102,6 +102,32 @@ button:disabled {
     font-size: 3rem !important;
     height: 90% !important; } }
 
+@media (max-width: 575.98px) and (orientation: landscape) {
+  .searchbar {
+    height: 12vh; }
+  .searchbar__input {
+    border-bottom: none !important;
+    color: whitesmoke;
+    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2rem !important;
+    height: 90% !important; } }
+
+@media (min-width: 576px) and (max-width: 767.98px) and (orientation: landscape) {
+  .searchbar {
+    height: 11vh; }
+  .searchbar__input {
+    border-bottom: none !important;
+    color: whitesmoke;
+    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 3rem !important;
+    height: 90% !important; } }
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .searchbar {
+    height: 10vh; } }
+
 .market {
   background: #000000;
   /* fallback for old browsers */
@@ -191,11 +217,11 @@ button:disabled {
 
 @media (min-width: 576px) and (max-width: 767.98px) and (orientation: landscape) {
   .market__item {
-    font-size: 0.5rem; } }
+    font-size: 1.2rem; } }
 
 @media (min-width: 768px) and (max-width: 991.98px) and (orientation: landscape) {
   .market__item {
-    font-size: 0.5rem; } }
+    font-size: 1.2rem; } }
 
 .user {
   align-items: center;
@@ -292,6 +318,28 @@ button:disabled {
 .cointItem__btn--clearSearch {
   font-size: 1rem;
   margin-right: 1%; }
+
+@media (max-width: 575.98px) and (orientation: portrait) {
+  .coinSearched {
+    height: 30vh; }
+  .btn__add--coinSearched,
+  .btn__clear--coinSearched {
+    line-height: 1;
+    height: 40px;
+    text-align: center;
+    width: 80px; } }
+
+@media (max-width: 575.98px) and (orientation: landscape) {
+  .coinSearched {
+    height: 40vh; } }
+
+@media (min-width: 576px) and (max-width: 767.98px) and (orientation: landscape) {
+  .coinSearched {
+    height: 40vh; } }
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .coinSearched {
+    height: 40vh; } }
 
 .coinItem {
   align-items: center;
@@ -391,6 +439,48 @@ button:disabled {
   font-size: 1rem;
   margin-right: 1%; }
 
+@media (max-width: 575.98px) {
+  .coinItem {
+    height: 40vh; }
+  .coinItem__row--1 {
+    height: 30%; }
+  .coinItem__row--2 {
+    height: 30%; }
+  .coinItem__row--3 {
+    height: 40%; }
+  .cointItem__btn--clear {
+    font-size: 1rem;
+    margin-right: 1%;
+    line-height: 1;
+    height: 40px;
+    text-align: center;
+    width: 80px; }
+  .cointItem__btn--remove {
+    font-size: 1rem;
+    margin-right: 1%;
+    line-height: 1;
+    height: 40px;
+    text-align: center;
+    width: 70px; }
+  .coinItem__add,
+  .coinItem__delete {
+    line-height: 1;
+    height: 40px;
+    width: 35px;
+    text-align: center; } }
+
+@media (max-width: 575.98px) and (orientation: landscape) {
+  .coinItem {
+    height: 60vh; } }
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .coinItem {
+    height: 50vh; } }
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .coinItem {
+    height: 50vh; } }
+
 .message {
   align-items: center;
   display: flex;
@@ -415,9 +505,17 @@ button:disabled {
   .message__text {
     font-size: 2rem; } }
 
+@media (max-width: 575.98px) and (orientation: landscape) {
+  .message {
+    height: 40vh; } }
+
 @media (min-width: 576px) and (max-width: 767.98px) {
   .message__text {
     font-size: 2rem; } }
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .message {
+    height: 40vh; } }
 
 .footer {
   align-items: center;
@@ -425,7 +523,7 @@ button:disabled {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 22vh;
+  height: 25vh;
   padding-top: 1%;
   text-align: center; }
 

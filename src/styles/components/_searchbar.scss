@@ -94,9 +94,44 @@
     }
 }
 
+//*media queries landscape
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) and  (orientation: landscape)  {
+    .searchbar{
+        height: 12vh;
+    }
+
+    .searchbar__input{
+        border-bottom: none !important;
+        color: whitesmoke;
+        display: inline-block;
+        font-family: $main-font;
+        font-size: 2rem !important;
+        height: 90% !important;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) and (orientation: landscape) {
+    .searchbar{
+        height: 11vh;
+    }
+
+    .searchbar__input{
+        border-bottom: none !important;
+        color: whitesmoke;
+        display: inline-block;
+        font-family: $main-font;
+        font-size: 3rem !important;
+        height: 90% !important;
+    }
+}
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991.98px) {
-
+    .searchbar{
+        height: 10vh;
+    }
 }
 
 // Large devices (desktops, 992px and up)

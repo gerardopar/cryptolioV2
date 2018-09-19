@@ -35,17 +35,6 @@ const Coin = (props) => {
 
         </ReactCSSTransitionGroup>
 
-        {/*{parsedData.map((coin) => {
-            return(<CoinItem
-                key={coin.id} 
-                {...coin}
-                handleChange={props.handleChange}
-                handleDeleteCoin={props.handleDeleteCoin}
-                handleCoinsToAdd={props.handleCoinsToAdd}
-                handleCoinsToRemove={props.handleCoinsToRemove}
-                handleCoinsToClear={props.handleCoinsToClear}
-                />);
-        })}*/}
         </div>
     );
 };

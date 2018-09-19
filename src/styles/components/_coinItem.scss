@@ -120,3 +120,71 @@
     font-size: 1rem;
     margin-right: 1%;
 }
+
+//*media queries
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .coinItem{
+        height: 40vh;
+    }
+    //* inner coin rows
+    .coinItem__row--1{
+        height: 30%;
+    }
+    .coinItem__row--2{
+        height: 30%;
+    }
+    .coinItem__row--3{
+        height: 40%;
+    }
+
+    .cointItem__btn--clear{
+        font-size: 1rem;
+        margin-right: 1%;
+        line-height: 1;
+        height: 40px;
+        text-align: center;
+        width: 80px;
+    }
+    
+    .cointItem__btn--remove{
+        font-size: 1rem;
+        margin-right: 1%;
+        line-height: 1;
+        height: 40px;
+        text-align: center;
+        width: 70px;
+    }
+
+    .coinItem__add,
+    .coinItem__delete{
+        line-height: 1;
+        height: 40px;
+        width: 35px;
+        text-align: center;
+    }
+
+
+}
+
+//*media queries landscape
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) and  (orientation: landscape)  {
+    .coinItem{
+        height: 60vh;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .coinItem{
+        height: 50vh;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .coinItem{
+        height: 50vh;
+    }
+}

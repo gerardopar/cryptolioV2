@@ -24,8 +24,8 @@ const CoinSearched = (props) => {
                             <p className="coinSearched__text">24hr per.</p>
                         </div>
                         <div className="coinSearched__btn--wrap">
-                            <button onClick={props.addCoin} className="btn-small cointItem__btn--addSearch waves-effect waves-light z-depth-5">add coin</button>
-                            <button onClick={props.clearSearch} className="btn-small grey cointItem__btn--clearSearch waves-effect waves-light z-depth-5">clear search</button>
+                            <button onClick={props.addCoin} className="btn-small btn__add--coinSearched cointItem__btn--addSearch waves-effect waves-light z-depth-5">add coin</button>
+                            <button onClick={props.clearSearch} className="btn-small btn__clear--coinSearched grey cointItem__btn--clearSearch waves-effect waves-light z-depth-5">clear search</button>
                         </div>
 
                     </div>
