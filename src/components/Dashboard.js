@@ -3,6 +3,7 @@ import React from 'react';
 import uuidv4 from 'uuid/v4';
 
 //components
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Market from './Market';
 import SearchBar from '../components/SearchBar';
 import Summary from '../components/Summary';
@@ -24,7 +25,8 @@ class Dashboard extends React.Component{
                 priceChange: '',
                 slug: ''
             },
-            searchbar: false
+            searchbar: false,
+            summary: 0 
         };
         //method bindings
         this.handleCoinSearch = this.handleCoinSearch.bind(this);
@@ -279,6 +281,7 @@ class Dashboard extends React.Component{
 
     handleCoinsSummary(){
         let summary = 0;
+
         let jsonParsed = localStorage.getItem('coins');
         let parsedData = JSON.parse(jsonParsed);
 
@@ -286,8 +289,13 @@ class Dashboard extends React.Component{
             console.log(coin);
             console.log('coin value', coin.value);
             summary = summary + coin.value;
-            localStorage.setItem('portfolioSummary', JSON.stringify(summary));
+            // localStorage.setItem('portfolioSummary', JSON.stringify(summary));
         });
+
+
+        this.setState(() => ({
+            summary: summary
+        }));
     };
 
     render(){
@@ -296,6 +304,11 @@ class Dashboard extends React.Component{
 
         return(
             <div>
+            <ReactCSSTransitionGroup
+            transitionName="trans"
+            transitionEnterTimeout={1000}
+            transitionLeaveTimeout={1100}>
+
                 <SearchBar searchbarVal={this.state.searchbar} toggleSearchBar={this.handleToggleSearchbar}/>
                 {this.state.searchbar ? 
                     <form className="searchbar__form" onSubmit={this.handleCoinSearch}>
@@ -306,13 +319,20 @@ class Dashboard extends React.Component{
                             </button>
                         </div>
                     </form> : ''}
+
+            </ReactCSSTransitionGroup>
                 
                 <Market />
-                <Summary />
+                <Summary summary={this.state.summary}/>
 
 
+            <ReactCSSTransitionGroup
+            transitionName="trans"
+            transitionEnterTimeout={1000}
+            transitionLeaveTimeout={1100}>
+                
                 {
-                    this.state.coin.name.length > 0 ? 
+                this.state.coin.name.length > 0 ? 
                     <CoinSearched
                     handleChange={this.handleChange}
                     addCoin={this.handleAddCoin} 
@@ -320,6 +340,14 @@ class Dashboard extends React.Component{
                     coin={this.state.coin}/>
                     : ''
                 }
+                
+            </ReactCSSTransitionGroup>
+                
+
+            <ReactCSSTransitionGroup
+            transitionName="searchbarTrans"
+            transitionEnterTimeout={1000}
+            transitionLeaveTimeout={1100}>
                 
                 {
                     parsedData ? <Coin 
@@ -333,7 +361,8 @@ class Dashboard extends React.Component{
                     span="Search coins to get Started"
                     text="NO COINS CURRENTLY TRACKED"/>
                 }
-                
+            
+            </ReactCSSTransitionGroup>
             </div>
         );
     };

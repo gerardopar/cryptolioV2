@@ -46,3 +46,65 @@
     border-bottom: 1px solid #5c6bc0 !important;
     box-shadow: 0 1px 0 0 rgb(29, 29, 29) !important
 }
+
+//sidebar transition 
+.trans-enter {
+    opacity: 0.01;
+}
+
+.trans-enter.trans-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+    -webkit-transition: opacity 500ms ease-in;
+    -moz-transition: opacity 500ms ease-in;
+    -ms-transition: opacity 500ms ease-in;
+    -o-transition: opacity 500ms ease-in;
+}
+
+.searchbartrans-leave {
+    opacity: 1;
+}
+
+.searchbartrans-leave.searchbartrans-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}  
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .searchbar__input{
+        border-bottom: none !important;
+        color: whitesmoke;
+        display: inline-block;
+        font-family: $main-font;
+        font-size: 2rem !important;
+        height: 90% !important;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .searchbar__input{
+        border-bottom: none !important;
+        color: whitesmoke;
+        display: inline-block;
+        font-family: $main-font;
+        font-size: 3rem !important;
+        height: 90% !important;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}

@@ -25,7 +25,7 @@ class Market extends React.Component {
             });
 
         } else {
-            throw new Error('unable to fetch currency info');
+            throw new Error('unable to fetch market info');
         }
 
     }

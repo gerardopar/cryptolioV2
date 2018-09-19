@@ -1,4 +1,8 @@
+//importing react
 import React from 'react';
+
+//components s
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import CoinItem from './CoinItem';
 import Message from './Message';
 
@@ -7,7 +11,12 @@ const Coin = (props) => {
     let parsedData = JSON.parse(jsonParsed);
     return (
         <div>
+        
 
+        <ReactCSSTransitionGroup
+            transitionName="trans"
+            transitionEnterTimeout={1000}
+            transitionLeaveTimeout={1100}>
         {
             parsedData.length > 0 ? parsedData.map((coin) => {
                 return(<CoinItem
@@ -23,6 +32,8 @@ const Coin = (props) => {
             span="Add coins to get started"
             text="NO COINS CURRENTLY TRACKED"/>
         }
+
+        </ReactCSSTransitionGroup>
 
         {/*{parsedData.map((coin) => {
             return(<CoinItem

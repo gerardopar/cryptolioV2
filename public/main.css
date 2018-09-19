@@ -374,5 +374,37 @@ button:disabled {
 .message__text {
   color: rgba(163, 163, 163, 0.5); }
 
+.footer {
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 22vh;
+  padding-top: 1%;
+  text-align: center; }
+
+.footer__poweredBy {
+  color: whitesmoke; }
+
+.poweredBy {
+  border-bottom: solid 1px whitesmoke;
+  color: whitesmoke;
+  text-decoration: none; }
+
+.poweredBy:hover {
+  color: whitesmoke;
+  text-decoration: none; }
+
+.footer__text {
+  border-top: solid 2px  black;
+  color: whitesmoke;
+  padding-top: 1%;
+  width: 100%; }
+
+.footer__icon {
+  height: 35px;
+  width: 35px; }
+
 
 /*# sourceMappingURL=main.css.map*/
