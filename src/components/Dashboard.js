@@ -42,6 +42,7 @@ class Dashboard extends React.Component{
         this.handleCoinsToRemove = this.handleCoinsToRemove.bind(this);
         this.handleCoinsToClear = this.handleCoinsToClear.bind(this);
         this.handleCoinsSummary = this.handleCoinsSummary.bind(this);
+        this.handleGetLocalStorage = this.handleGetLocalStorage.bind(this);
     }
 
     async componentDidMount(){
@@ -56,19 +57,18 @@ class Dashboard extends React.Component{
 
     //method: handles live coin updates on mount
     async handleLiveUpdates(){
-        let jsonParsed = localStorage.getItem('coins');
-        let parsedData = JSON.parse(jsonParsed);
+        let localCoinData = this.handleGetLocalStorage();
 
-        parsedData.forEach((coin) => {
+        localCoinData.forEach((coin) => {
             this.handleCoinValues(coin.symbol).then((data) => {
                 coin.price = Number(data.price_usd).toFixed(2);
                 coin.priceChange = Number(data.percent_change_24h).toFixed(2);
                 coin.value = Number(coin.available) * Number(data.price_usd);
-                localStorage.setItem('coins', JSON.stringify(parsedData));
+                localStorage.setItem('coins', JSON.stringify(localCoinData));
             });
             
         });
-        console.log('mounted data', parsedData);
+        console.log('mounted data', localCoinData);
     };
 
     //method: handle the return of the coin searched
@@ -179,12 +179,12 @@ class Dashboard extends React.Component{
     //method: handles the removal of a coin from the coins list
     handleDeleteCoin(optionToRemove){
 
-        let jsonParsed = localStorage.getItem('coins');
-        let parsedData = JSON.parse(jsonParsed);
-        parsedData = parsedData.filter((coin) => {
+        let localCoinData = this.handleGetLocalStorage();
+        localCoinData = localCoinData.filter((coin) => {
             return (optionToRemove !== coin.id);
         });
-        localStorage.setItem('coins', JSON.stringify(parsedData));
+        
+        localStorage.setItem('coins', JSON.stringify(localCoinData));
 
         this.setState((prevState) => ({
             coins: prevState.coins.filter((coin) => {
@@ -230,18 +230,18 @@ class Dashboard extends React.Component{
         e.preventDefault();
 
         let coinsToAdd = e.target.elements.coinToAdd.value //user input
-        let jsonParsed = localStorage.getItem('coins');
-        let parsedData = JSON.parse(jsonParsed);
+        let localCoinData = this.handleGetLocalStorage();
 
-        let coinFound = parsedData.find(x => x.id === coin);
+        let coinFound = localCoinData.find(x => x.id === coin);
         coinFound.available = Number(coinFound.available) + Number(coinsToAdd);
-        localStorage.setItem('coins', JSON.stringify(parsedData));
+        localStorage.setItem('coins', JSON.stringify(localCoinData));
         
-        let jParsed = localStorage.getItem('coins');
-        let data = JSON.parse(jParsed);
+        let localCoinDataUpdate = this.handleGetLocalStorage();
         this.setState(() => ({
-            coins: data
+            coins: localCoinDataUpdate
         }));
+
+        this.handleLiveUpdates();
     };
 
     //method: handle removing coins
@@ -249,53 +249,58 @@ class Dashboard extends React.Component{
         e.preventDefault();
 
         let coinsToRemove = e.target.elements.coinToRemove.value //user input
-        let jsonParsed = localStorage.getItem('coins');
-        let parsedData = JSON.parse(jsonParsed);
+        let localCoinData = this.handleGetLocalStorage();
 
-        let coinFound = parsedData.find(x => x.id === coin);
+        let coinFound = localCoinData.find(x => x.id === coin);
         coinFound.available = Number(coinFound.available) - Number(coinsToRemove);
-        localStorage.setItem('coins', JSON.stringify(parsedData));
+        localStorage.setItem('coins', JSON.stringify(localCoinData));
 
-        let jParsed = localStorage.getItem('coins');
-        let data = JSON.parse(jParsed);
+        let localCoinDataUpdate = this.handleGetLocalStorage();
         this.setState(() => ({
-            coins: data
+            coins: localCoinDataUpdate
         }));
+
+        this.handleLiveUpdates();
     };
 
     //method: handle removing coins
     handleCoinsToClear(coin){
-        let jsonParsed = localStorage.getItem('coins');
-        let parsedData = JSON.parse(jsonParsed);
-        let coinFound = parsedData.find(x => x.id === coin);
+        let localCoinData = this.handleGetLocalStorage();
+        let coinFound = localCoinData.find(x => x.id === coin);
 
         coinFound.available = 0;
-        localStorage.setItem('coins', JSON.stringify(parsedData));
+        localStorage.setItem('coins', JSON.stringify(localCoinData));
 
-        let jParsed = localStorage.getItem('coins');
-        let data = JSON.parse(jParsed);
+        let localCoinDataUpdate = this.handleGetLocalStorage();
         this.setState(() => ({
-            coins: data
+            coins: localCoinDataUpdate
         }));
+
+        this.handleLiveUpdates();
     };
 
+    //method: handles the portfolio summary
     handleCoinsSummary(){
         let summary = 0;
+        let localCoinData = this.handleGetLocalStorage();
 
-        let jsonParsed = localStorage.getItem('coins');
-        let parsedData = JSON.parse(jsonParsed);
-
-        parsedData.forEach((coin) => {
+        localCoinData.forEach((coin) => {
             console.log(coin);
             console.log('coin value', coin.value);
             summary = summary + coin.value;
-            // localStorage.setItem('portfolioSummary', JSON.stringify(summary));
         });
-
 
         this.setState(() => ({
             summary: summary
         }));
+    };
+
+    //method: handles getting the local storage
+    handleGetLocalStorage(){
+        let jsonParsed = localStorage.getItem('coins');
+        let parsedData = JSON.parse(jsonParsed);
+
+        return parsedData;
     };
 
     render(){
